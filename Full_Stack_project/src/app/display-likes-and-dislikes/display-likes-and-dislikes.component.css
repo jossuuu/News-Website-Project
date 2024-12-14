@@ -1,0 +1,132 @@
+h1 {
+  padding: 20px 40px; /* Padding around the text */
+  background-color: #ffffff67; /* White background */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Slightly faded border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-family: Arial, sans-serif; /* Optional: Change the font */
+  font-size: 24px; /* Font size for the heading */
+  color: #fffcfc; /* Dark gray text color */
+  text-align: center; /* Center text alignment */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Spread out content to the left and right */
+  align-items: center; /* Align items vertically */
+}
+
+h1 .btn-back {
+  background-color: #4caf50; /* Green background for the button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+h1 .btn-back:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.like-tile-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  justify-content: center;
+}
+
+.like-tile {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.like-tile:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.news-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  white-space: normal; /* Ensures the title wraps instead of truncating */
+}
+
+.reaction-count {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.likes,
+.dislikes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+.likes {
+  background-color: #e6f7e9;
+  color: #34a853;
+}
+
+.dislikes {
+  background-color: #fdebea;
+  color: #d93025;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.pagination-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #6c757d;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination-btn:hover:not(:disabled),
+.pagination-btn:focus {
+  background-color: #f8f9fa;
+  border-color: #bbb;
+}
+
+.pagination-btn.active {
+  background-color: #343a40;
+  color: #fff;
+  border-color: #343a40;
+}
+
+.pagination-btn:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+  background-color: #f8f9fa;
+}

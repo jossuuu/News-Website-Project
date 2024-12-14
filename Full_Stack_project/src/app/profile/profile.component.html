@@ -1,0 +1,33 @@
+<div class="profile-card">
+  <div class="profile-left">
+    <div class="profile-image">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
+        alt="Profile Picture"
+      />
+    </div>
+    <h2>{{ user.usersName }}</h2>
+    <a href="#" class="edit-link">
+      <i class="fas fa-pencil-alt"></i>
+    </a>
+  </div>
+  <div class="profile-right">
+    <div class="section">
+      <h3>Information</h3>
+      <p><strong>Email:</strong>{{ user.userEmail }}</p>
+    </div>
+    <div class="section">
+      <h3>User Intrests</h3>
+      <p><strong>Category</strong> {{ user.userInterest }}</p>
+    </div>
+    <div class="section">
+      <h3>User subscription Status</h3>
+      <p><strong>Subscription</strong> {{ user.subscriptionStatus }}</p>
+    </div>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</div>

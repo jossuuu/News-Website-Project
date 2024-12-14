@@ -1,0 +1,145 @@
+<div>
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <div class="logo-wrapper">
+            <img
+              class="logo"
+              src="https://img.icons8.com/?size=100&id=44030&format=png&color=000000"
+              alt="LOGO"
+            />
+          </div>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger"><div class="bar"></div></div>
+          <ul>
+            <li>
+              <a href="javascript:void(0);" (click)="redirectToGmail()"
+                >Contact</a
+              >
+            </li>
+            <li><a class="a" (click)="clkHistory()"> News History </a></li>
+            <li><a class="a" (click)="clkSort()"> Filter </a></li>
+            <li><a class="a" (click)="clkSearch()"> Search </a></li>
+            <li *ngIf="currUserSubscriptionStatus === 'false'">
+              {{ currUserSubscriptionStatus }}
+              <a class="a" (click)="clkSubscribe()"> Subscribe </a>
+            </li>
+            <li><a href="/"> LogOut </a></li>
+          </ul>
+        </div>
+        <div class="profile">
+          <a (click)="clkProfile()">
+            <img
+              class="profile_logo"
+              src="https://img.icons8.com/?size=100&id=WBlJ653xpN0M&format=png&color=000000"
+              alt="PROFILE_LOGO"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="button-container">
+  <button class="responsive-button" (click)="fetchNews()">All</button>
+  <div *ngFor="let category of categories">
+    <button class="responsive-button" (click)="selectCategory(category)">
+      {{ category | uppercase }}
+    </button>
+  </div>
+</div>
+
+<div class="news-list">
+  <div *ngFor="let newsItem of newsList" class="news-card">
+    <img [src]="newsItem.newsImage" alt="News Image" class="news-image" />
+    <div class="news-content">
+      <!-- <h3 class="news-title">{{ newsItem.newsTitle }}</h3> -->
+      <h3 class="news-title">
+        {{
+          newsItem.newsTitle.split(" ").length > 10
+            ? newsItem.newsTitle.split(" ").slice(0, 10).join(" ") + "..."
+            : newsItem.newsTitle
+        }}
+      </h3>
+      <!-- <p class="news-description">{{ newsItem.newsDescription }}</p> -->
+      <p>
+        {{
+          newsItem.newsDescription.length > 80
+            ? (newsItem.newsDescription | slice : 0 : 80) + "..."
+            : newsItem.newsDescription
+        }}
+      </p>
+      <br />
+      <p class="news-meta">
+        <span>Category: {{ newsItem.newsCategory | uppercase }} </span><br />
+        <span>Premium: {{ newsItem.newsPremium | uppercase }} </span><br />
+        <span>Author: {{ newsItem.newsAuthor }}</span> |
+        <span
+          >Published: {{ newsItem.newsPublishedAT | date : "MM-dd-yyyy" }}</span
+        >
+      </p>
+      <div
+        *ngIf="
+          (currUserSubscriptionStatus === 'true' &&
+            newsItem.newsPremium === 'true') ||
+          newsItem.newsPremium === 'false'
+        "
+      >
+        <button
+          class="read-more"
+          (click)="updateHistory(currUserId, newsItem.newsId)"
+        >
+          <a
+            [href]="newsItem.newsURL"
+            target="_blank"
+            style="list-style: none; text-decoration: none"
+            >Read More</a
+          >
+        </button>
+      </div>
+
+      <div class="reaction-buttons">
+        <button class="like-button" (click)="incrementLikes(newsItem.newsId)">
+          👍 Like {{ newsItem.newsLikes }}
+        </button>
+        <button
+          class="dislike-button"
+          (click)="incrementDislikes(newsItem.newsId)"
+        >
+          👎 Dislike {{ newsItem.newsDislikes }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pagination-controls">
+  <button
+    class="pagination-btn"
+    (click)="onPageChange(pageIndex - 1)"
+    [disabled]="pageIndex === 0"
+  >
+    &laquo;
+  </button>
+
+  <button
+    class="pagination-btn"
+    *ngFor="let page of pageRange"
+    [class.active]="page === pageIndex"
+    [disabled]="page === -1"
+    (click)="page !== -1 && onPageChange(page)"
+  >
+    {{ page === -1 ? "..." : page + 1 }}
+  </button>
+
+  <button
+    class="pagination-btn"
+    (click)="onPageChange(pageIndex + 1)"
+    [disabled]="pageIndex === totalPages - 1"
+  >
+    &raquo;
+  </button>
+</div>

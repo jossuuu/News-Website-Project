@@ -1,0 +1,63 @@
+<h1 class="heading">
+  Sort News
+  <button class="btn-back" (click)="goBack()">Back</button>
+</h1>
+
+
+<div class="container">
+  <!-- Sorting Buttons -->
+  <div class="sorting-buttons">
+    <button (click)="sortUsingField('newsId')">Sort by News ID</button>
+    <button (click)="sortUsingField('newsAuthor')">Sort by Author Name</button>
+    <button (click)="sortUsingField('newsCategory')">
+      Sort by News Category
+    </button>
+    <button (click)="sortUsingField('newsPublishedAT')">
+      Sort by Published Date
+    </button>
+  </div>
+
+  <!-- Display News -->
+  <div *ngIf="newsList.length > 0" class="news-list">
+    <div *ngFor="let news of newsList" class="news-item">
+      <p><strong>News Id:</strong> {{ news.newsId }}</p>
+      <h3>{{ news.newsTitle }}</h3>
+      <p><strong>Author:</strong> {{ news.newsAuthor }}</p>
+      <p><strong>Category:</strong> {{ news.newsCategory }}</p>
+      <p><strong>Published Date:</strong> {{ news.newsPublishedAT }}</p>
+      <p>{{ news.newsDescription }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="newsList.length === 0" class="no-results">
+    <p>No news available.</p>
+  </div>
+</div>
+
+<div class="pagination-controls">
+  <button
+    class="pagination-btn"
+    (click)="onPageChange(pageIndex - 1)"
+    [disabled]="pageIndex === 0"
+  >
+    &laquo;
+  </button>
+
+  <button
+    class="pagination-btn"
+    *ngFor="let page of pageRange"
+    [class.active]="page === pageIndex"
+    [disabled]="page === -1"
+    (click)="page !== -1 && onPageChange(page)"
+  >
+    {{ page === -1 ? "..." : page + 1 }}
+  </button>
+
+  <button
+    class="pagination-btn"
+    (click)="onPageChange(pageIndex + 1)"
+    [disabled]="pageIndex === totalPages - 1"
+  >
+    &raquo;
+  </button>
+</div>

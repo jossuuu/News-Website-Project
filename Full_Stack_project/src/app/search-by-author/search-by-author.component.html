@@ -1,0 +1,41 @@
+<h1 class="heading">
+  Search News By Author
+  <button class="btn-back" (click)="goBack()">Back</button>
+</h1>
+
+
+<div class="search-container">
+  <!-- Input and Search Button -->
+  <div class="search-bar">
+    <input
+      type="text"
+      placeholder="Enter Author Name to search news"
+      [(ngModel)]="searchQuery"
+    />
+    <button (click)="searchNews(searchQuery)">Search</button>
+  </div>
+
+  <!-- News Tiles -->
+  <div *ngIf="newsList.length > 0" class="news-grid">
+    <div class="news-tile" *ngFor="let news of newsList">
+      <p><strong>ID:</strong> {{ news.newsId }}</p>
+      <h3 class="title"><Strong> Title: </Strong>{{ news.newsTitle }}</h3>
+      <p><strong>Description:</strong> {{ news.newsDescription }}</p>
+      <p><strong>Category:</strong> {{ news.newsCategory }}</p>
+      <p><strong>Published At:</strong> {{ news.newsPublishedAT }}</p>
+      <button class="read-more-btn">
+        <a
+          [href]="news.newsURL"
+          target="_blank"
+          style="list-style: none; text-decoration: none"
+          >Read More</a
+        >
+      </button>
+    </div>
+  </div>
+
+  <!-- No Results Found -->
+  <div *ngIf="newsList.length === 0 && searchClicked" class="no-results">
+    <p>No news records found. Try searching with a different keyword!</p>
+  </div>
+</div>

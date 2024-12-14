@@ -1,0 +1,66 @@
+<h1>
+  News Update Admin Panel
+  <button class="btn-back" (click)="goBack()">Back</button>
+</h1>
+
+<div class="news-list">
+  <div *ngFor="let newsItem of newsList" class="news-card">
+    <img [src]="newsItem.newsImage" alt="News Image" class="news-image" />
+    <div class="news-content">
+      <h3 class="news-title">{{ newsItem.newsTitle }}</h3>
+      <p class="news-description">{{ newsItem.newsDescription }}</p>
+      <p class="news-meta">
+        <span>Premium: {{ newsItem.newsPremium | uppercase }}</span
+        ><br />
+        <span>Author: {{ newsItem.newsAuthor }}</span> |
+        <span
+          >Published: {{ newsItem.newsPublishedAT | date : "MM-dd-yyyy" }}</span
+        >
+      </p>
+      <div class="button-container">
+        <button
+          class="update"
+          type="button"
+          (click)="onUpdate(newsItem.newsId)"
+        >
+          UPDATE
+        </button>
+        <button
+          class="premium"
+          type="button"
+          (click)="onUpdatePremium(newsItem.newsId, defaultPremium)"
+        >
+          Set as Premium
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pagination-controls">
+  <button
+    class="pagination-btn"
+    (click)="onPageChange(pageIndex - 1)"
+    [disabled]="pageIndex === 0"
+  >
+    &laquo;
+  </button>
+
+  <button
+    class="pagination-btn"
+    *ngFor="let page of pageRange"
+    [class.active]="page === pageIndex"
+    [disabled]="page === -1"
+    (click)="page !== -1 && onPageChange(page)"
+  >
+    {{ page === -1 ? "..." : page + 1 }}
+  </button>
+
+  <button
+    class="pagination-btn"
+    (click)="onPageChange(pageIndex + 1)"
+    [disabled]="pageIndex === totalPages - 1"
+  >
+    &raquo;
+  </button>
+</div>

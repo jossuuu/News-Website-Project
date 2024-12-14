@@ -1,0 +1,21 @@
+<h1>
+  News Delete Admin Panel
+  <button class="btn-back" (click)="goBack()">Back</button>
+</h1>
+
+<div class="news-list">
+  <div *ngFor="let newsItem of newsList" class="news-card">
+    <img [src]="newsItem.newsImage" alt="News Image" class="news-image" />
+    <div class="news-content">
+      <h3 class="news-title">{{ newsItem.newsTitle }}</h3>
+      <p class="news-description">{{ newsItem.newsDescription }}</p>
+      <p class="news-meta">
+        <span>Author: {{ newsItem.newsAuthor }}</span> |
+        <span>Published: {{ newsItem.newsPublishedAt }}</span>
+      </p>
+      <button class="Delete" type="button" (click)="onDelete(newsItem.newsId)">
+        DELETE
+      </button>
+    </div>
+  </div>
+</div>

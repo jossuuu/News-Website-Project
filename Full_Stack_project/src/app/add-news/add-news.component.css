@@ -1,0 +1,93 @@
+h1 {
+  padding: 20px 40px; /* Padding around the text */
+  background-color: #ffffff67; /* White background */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Slightly faded border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-family: Arial, sans-serif; /* Optional: Change the font */
+  font-size: 24px; /* Font size for the heading */
+  color: #fffcfc; /* Dark gray text color */
+  text-align: center; /* Center text alignment */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Spread out content to the left and right */
+  align-items: center; /* Align items vertically */
+}
+
+h1 .btn-back {
+  background-color: #4caf50; /* Green background for the button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+h1 .btn-back:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.error-message {
+  color: red;
+  font-size: 0.85em;
+  margin-top: 5px;
+}
+.btn-submit:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.form-container {
+  width: 50%;
+  margin: auto;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.btn-submit {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-submit:hover {
+  background-color: #45a049;
+}

@@ -1,0 +1,37 @@
+<h1 class="heading">
+  Admin Panel
+  <button class="btn-back" (click)="logout()">LogOut</button>
+</h1>
+
+<div class="container">
+  <div class="card">
+    <div class="card-item">
+      <label>Add News</label>
+      <button (click)="addNewsbtn()">Add</button>
+    </div>
+    <div class="card-item">
+      <label>Delete News</label>
+      <button (click)="deleteNewsbtn()">Delete</button>
+    </div>
+    <div class="card-item">
+      <label>Update News</label>
+      <button (click)="updateNewsbtn()">Update</button>
+    </div>
+    <div class="card-item">
+      <label>Display Users</label>
+      <button (click)="displayUserbtn()">Display</button>
+    </div>
+    <div class="card-item">
+      <label>News Likes and Dislikes </label>
+      <button (click)="newsDetailsbtn()">Show</button>
+    </div>
+    <div class="card-item">
+      <label>Sort News</label>
+      <button (click)="newsSortbtn()">Sort</button>
+    </div>
+    <div class="card-item">
+      <label>Search News by Author Name</label>
+      <button (click)="searchNewsbtn()">Search</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,116 @@
+.heading {
+  padding: 20px 40px; /* Padding around the text */
+  background-color: #ffffff67; /* White background */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Slightly faded border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-family: Arial, sans-serif; /* Optional: Change the font */
+  font-size: 24px; /* Font size for the heading */
+  color: #fffcfc; /* Dark gray text color */
+  text-align: center; /* Center text alignment */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Spread out content to the left and right */
+  align-items: center; /* Align items vertically */
+}
+
+.heading .btn-back {
+  background-color: #4caf50; /* Green background for the button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.heading .btn-back:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.user-list-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-list-container h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.user-card {
+  width: 320px;
+  background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.user-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #dcedc8, #f1f8e9);
+}
+
+.user-card p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #34495e;
+}
+
+.user-card p strong {
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+@media (min-width: 768px) {
+  .user-list-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .user-card {
+    margin: 1rem;
+    width: 280px;
+  }
+}
+
+button {
+  background-color: #ff4d4d; /* Bright red for a warning feel */
+  color: white; /* White text for contrast */
+  border: none; /* Remove borders */
+  border-radius: 8px; /* Rounded corners */
+  margin-top: 20px;
+  padding: 10px 20px; /* Comfortable padding */
+  font-size: 16px; /* Readable font size */
+  font-weight: bold; /* Emphasize the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: all 0.3s ease; /* Smooth hover effects */
+}
+
+button:hover {
+  background-color: #e60000; /* Darker red on hover */
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+button:active {
+  background-color: #cc0000; /* Even darker red on click */
+  transform: scale(1); /* Reset zoom */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Reduced shadow */
+}

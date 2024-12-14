@@ -1,0 +1,39 @@
+<h1 class="heading">
+  News History
+  <button class="btn-back" (click)="goBack()">Back</button>
+</h1>
+
+<div class="user-history-container" *ngFor="let userHistory of userHistories">
+  <div class="user-history-card">
+    <div class="user-info">
+      <h3>
+        {{ userHistory.user.usersName }} ({{ userHistory.user.userRole }})
+      </h3>
+      <p><strong>Interest:</strong> {{ userHistory.user.userInterest }}</p>
+    </div>
+
+    <div class="news-info">
+      <h4>{{ userHistory.news.newsTitle }}</h4>
+      <p><strong>Category:</strong> {{ userHistory.news.newsCategory }}</p>
+      <p>
+        <strong>Published By:</strong> {{ userHistory.news.newsAuthor }} on
+        {{ userHistory.news.newsPublishedAT | date }}
+      </p>
+      <img
+        [src]="userHistory.news.newsImage"
+        alt="News Image"
+        class="news-image"
+      />
+      <p>{{ userHistory.news.newsDescription }}</p>
+      <a [href]="userHistory.news.newsURL" target="_blank" class="read-more"
+        >Read More</a
+      >
+    </div>
+
+    <div class="viewed-at">
+      <p>
+        <strong>Viewed At:</strong> {{ userHistory.viewedAt | date : "medium" }}
+      </p>
+    </div>
+  </div>
+</div>

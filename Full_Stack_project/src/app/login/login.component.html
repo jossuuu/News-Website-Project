@@ -1,0 +1,78 @@
+<div class="main">
+  <input type="checkbox" id="chk" aria-hidden="true" />
+
+  <!-- Signup Form -->
+  <div class="signup">
+    <form (ngSubmit)="onSignup()" #signupform="ngForm">
+      <label for="chk" aria-hidden="true">Sign Up</label>
+      <input
+        type="text"
+        [(ngModel)]="user.usersName"
+        name="username"
+        placeholder="User name"
+        #username="ngModel"
+        required
+        minlength="3"
+      />
+      <div *ngIf="username.invalid && (username.dirty || username.touched)">
+        <div *ngIf="username.errors?.['minlength']" class="error-message">
+          Must contain at least 3 characters.
+        </div>
+      </div>
+      <select [(ngModel)]="user.userInterest" name="userinterest" required>
+        <option value="" disabled selected>Select Interests</option>
+        <option value="technology">Technology</option>
+        <option value="business">Business</option>
+        <option value="entertainment">Entertainment</option>
+        <option value="sports">Sports</option>
+      </select>
+      <input
+        type="password"
+        [(ngModel)]="user.userPassword"
+        name="password"
+        placeholder="Password"
+        #password="ngModel"
+        required
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+      />
+      <div *ngIf="password.invalid && (password.dirty || password.touched)">
+        <div *ngIf="password.errors?.['pattern']" class="error-message">
+          Must be 8+ characters, include uppercase, lowercase, and a digit
+        </div>
+      </div>
+      <select [(ngModel)]="user.userRole" name="userrole" required>
+        <option value="" disabled selected>Select Role</option>
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+      <button class="btn-submit" type="submit" [disabled]="signupform.invalid">
+        Sign-up
+      </button>
+    </form>
+  </div>
+
+  <!-- Login Form -->
+  <div class="login">
+    <form (ngSubmit)="onLogin()" #loginform="ngForm">
+      <label for="chk" aria-hidden="true">Login</label>
+      <input
+        type="text"
+        [(ngModel)]="user.usersName"
+        name="username"
+        placeholder="User Name"
+        required
+      />
+      <input
+        type="password"
+        [(ngModel)]="user.userPassword"
+        name="password"
+        placeholder="Password"
+        required
+      />
+      <button class="btn-submit" type="submit" [disabled]="loginform.invalid">
+        Login
+      </button>
+      <button type="button" (click)="goBack()">Back</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<h1 class="heading">
+  User Details
+  <button class="btn-back" (click)="goBack()">Back</button>
+</h1>
+
+<div class="user-list-container">
+  <div class="user-card" *ngFor="let user of users">
+    <p><strong>ID:</strong> {{ user.usersId }}</p>
+    <p><strong>Name:</strong> {{ user.usersName }}</p>
+    <p><strong>Role:</strong> {{ user.userRole }}</p>
+    <p><strong>Email:</strong> {{ user.userEmail }}</p>
+    <p><strong>Interests:</strong> {{ user.userInterest }}</p>
+    <p><strong>Subscription status:</strong> {{ user.subscriptionStatus }}</p>
+    <button (click)="changeSubStatus(user.usersId, defaultStatus)">
+      Remove Subscription
+    </button>
+  </div>
+</div>

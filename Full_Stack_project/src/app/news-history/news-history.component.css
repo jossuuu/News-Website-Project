@@ -1,0 +1,99 @@
+.user-history-container {
+  padding: 20px;
+  background-color: #f4f7fc;
+  display: flex;
+  justify-content: center;
+}
+
+.user-history-card {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.user-info {
+  margin-bottom: 20px;
+}
+
+.user-info h3 {
+  color: #2b2d42;
+}
+
+.user-info p {
+  color: #4f4f4f;
+}
+
+.news-info {
+  margin-bottom: 20px;
+}
+
+.news-info h4 {
+  color: #2b2d42;
+  font-size: 1.5rem;
+}
+
+.news-info p {
+  color: #4f4f4f;
+  font-size: 1.1rem;
+}
+
+.news-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.read-more:hover {
+  background-color: #0056b3;
+}
+
+.viewed-at {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.heading { padding: 20px 40px; /* Padding around the text */
+  background-color: #ffffff67; /* White background */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Slightly faded border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-family: Arial, sans-serif; /* Optional: Change the font */
+  font-size: 24px; /* Font size for the heading */
+  color: #fffcfc; /* Dark gray text color */
+  text-align: center; /* Center text alignment */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Spread out content to the left and right */
+  align-items: center; /* Align items vertically */
+}
+
+.heading .btn-back {
+  background-color: #4caf50; /* Green background for the button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.heading .btn-back:hover {
+  background-color: #45a049; /* Darker green on hover */
+}

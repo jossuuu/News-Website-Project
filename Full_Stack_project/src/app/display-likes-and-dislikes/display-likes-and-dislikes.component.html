@@ -1,0 +1,39 @@
+<h1 class="heading">
+  Display News Details Admin Panel
+  <button class="btn-back" (click)="goBack()">Back</button>
+</h1>
+
+<div class="pagination-controls">
+  <button
+    class="pagination-btn"
+    (click)="onPageChange(pageIndex - 1)"
+    [disabled]="pageIndex === 0"
+  >
+    &laquo;
+  </button>
+  <button
+    class="pagination-btn"
+    *ngFor="let page of [].constructor(totalPages); let i = index"
+    [class.active]="i === pageIndex"
+    (click)="onPageChange(i)"
+  >
+    {{ i + 1 }}
+  </button>
+  <button
+    class="pagination-btn"
+    (click)="onPageChange(pageIndex + 1)"
+    [disabled]="pageIndex === totalPages - 1"
+  >
+    &raquo;
+  </button>
+</div>
+
+<div class="like-tile-container">
+  <div class="like-tile" *ngFor="let news of newsList">
+    <h4 class="news-title">{{ news.newsTitle }}</h4>
+    <div class="reaction-count">
+      <span class="likes"> 👍 {{ news.newsLikes }} </span>
+      <span class="dislikes"> 👎 {{ news.newsDislikes }} </span>
+    </div>
+  </div>
+</div>
